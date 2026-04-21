@@ -1,0 +1,19 @@
+{
+  "name": "votewise",
+  "version": "1.0.0",
+  "description": "VoteWise AI - Election Process Education Assistant",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "deploy": "firebase deploy"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0",
+    "eslint": "^8.0.0"
+  },
+  "dependencies": {
+    "firebase-tools": "^13.0.0",
+    "@google/generative-ai": "^0.1.1"
+  }
+}
