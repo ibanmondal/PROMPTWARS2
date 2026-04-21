@@ -30,15 +30,20 @@
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- Google Analytics GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+    <!-- Google Firebase Services & Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-PLACEHOLDER', { anonymize_ip: true });
+        const firebaseConfig = {
+            projectId: "votewise-hackathon-demo",
+            appId: "1:1234567890:web:abcdef123456",
+            measurementId: "G-PLACEHOLDER"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        
         function trackEvent(action, category, label) {
-            gtag('event', action, { event_category: category, event_label: label });
+            firebase.analytics().logEvent(action, { event_category: category, event_label: label });
         }
     </script>
 
